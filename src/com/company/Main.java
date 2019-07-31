@@ -5,17 +5,20 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter some number: ");
-        int input = in.nextInt();
-        System.out.println(input + " * 1 = " + input);
-        System.out.println(input + " * 1 = " + input * 2);
-        System.out.println(input + " * 3 = " + input * 3);
-        System.out.println(input + " * 4 = " + input * 4);
-        System.out.println(input + " * 5 = " + input * 5);
-        System.out.println(input + " * 6 = " + input * 6);
-        System.out.println(input + " * 7 = " + input * 7);
-        System.out.println(input + " * 8 = " + input * 8);
-        System.out.println(input + " * 9 = " + input * 9);
-        System.out.println(input + " * 10 = " + input * 10);
+        int x, y, z, aver;
+        System.out.println("Введите Х: ");
+        x = in.nextInt();
+        System.out.println("Введите Y: ");
+        y = in.nextInt();
+        System.out.println("Введите Z: ");
+        z = in.nextInt();
+        aver = (x + y + z)/3;
+        System.out.println("Среднее арифметическое XYZ =  " + aver);
+        aver /= 2;
+        System.out.println("Среднее арифметическое XYZ проверка =  " + aver);
+        if (aver > 3)
+        {
+            System.out.println("Программа выполнена корректно");
+        }
     }
 }
