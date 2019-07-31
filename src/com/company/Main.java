@@ -5,20 +5,23 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        int x, y, z, aver;
-        System.out.println("Введите Х: ");
-        x = in.nextInt();
-        System.out.println("Введите Y: ");
-        y = in.nextInt();
-        System.out.println("Введите Z: ");
-        z = in.nextInt();
-        aver = (x + y + z)/3;
-        System.out.println("Среднее арифметическое XYZ =  " + aver);
-        aver /= 2;
-        System.out.println("Среднее арифметическое XYZ проверка =  " + aver);
-        if (aver > 3)
+        int x = 4, y = 7, z = 18, number;
+        System.out.println("Введите значение: ");
+        number = in.nextInt();
+        if (number == x)
         {
-            System.out.println("Программа выполнена корректно");
+            System.out.println("Данное значение имеется в константах");
         }
+        else
+            if (number == y)
+        {
+            System.out.println("Данное значение имеется в константах");
+        }else
+            if (number == z)
+        {
+            System.out.println("Данное значение имеется в константах");
+        }else
+
+            System.out.println("Такой константы нет!");
     }
 }
