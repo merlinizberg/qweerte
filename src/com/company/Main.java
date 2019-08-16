@@ -1,28 +1,22 @@
 package com.company;
-import java.util.Scanner;
-public class Main {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+class Main {
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
-        int i;
-        System.out.print("Введите длину массива:   ");
-        i = in.nextInt();
-        int arr1[] = new int[i];
-        for (int x = 0; x < i; x++) {
-            System.out.print("Введите значение массива в ячейке:  ");
-            arr1[x] = in.nextInt();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            double rub, change, c;
+            System.out.print("Введите количество рублей:   ");
+            rub = Double.parseDouble(reader.readLine());
+            System.out.print("Введите курс конверсии:   ");
+            change = Double.parseDouble(reader.readLine());
+            System.out.print(rub / change);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        for(int x = arr1.length-1 ; x > 0 ; x--){
-            for(int j = 0 ; j < x ; j++) {
-                if (arr1[j] > arr1[j + 1]) {
-                    int tmp = arr1[j];
-                    arr1[j] = arr1[j + 1];
-                    arr1[j + 1] = tmp;
-                }
-            }
-        }
-        for (int x = 0; x < i; x++) {
-            System.out.print(arr1[x] + " ");
-        }
+        //System.out.print("Доллар:   " + Math.round((rub / change) * 100.0) / 100.0);
     }
 }
