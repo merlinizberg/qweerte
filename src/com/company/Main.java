@@ -17,6 +17,5 @@ class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.print("Доллар:   " + Math.round((rub / change) * 100.0) / 100.0);
     }
 }
