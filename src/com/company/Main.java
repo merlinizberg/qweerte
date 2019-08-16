@@ -4,16 +4,25 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите число в двочичном формате: ");
-        int input = in.nextInt();
-        int i = bin2dec(String.valueOf(input));
-        System.out.println(i);
-    }
-    public static int bin2dec(String binNumber) {
-        int result = 0;
-        for (int i = 0;  i < binNumber.length() ; i++) {
-            result += Math.pow(2, i) * (binNumber.charAt(i) == '1' ? 1 : 0);
+        int i;
+        System.out.print("Введите длину массива:   ");
+        i = in.nextInt();
+        int arr1[] = new int[i];
+        for (int x = 0; x < i; x++) {
+            System.out.print("Введите значение массива в ячейке:  ");
+            arr1[x] = in.nextInt();
         }
-        return result;
+        for(int x = arr1.length-1 ; x > 0 ; x--){
+            for(int j = 0 ; j < x ; j++) {
+                if (arr1[j] > arr1[j + 1]) {
+                    int tmp = arr1[j];
+                    arr1[j] = arr1[j + 1];
+                    arr1[j + 1] = tmp;
+                }
+            }
+        }
+        for (int x = 0; x < i; x++) {
+            System.out.print(arr1[x] + " ");
+        }
     }
 }
