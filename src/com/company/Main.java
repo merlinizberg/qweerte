@@ -1,36 +1,28 @@
-
 package com.company;
-import java.io.*;
-
-
-class Main {
+import java.util.Scanner;
+public class Main {
     public static void main(String[] args) {
-        String s, s1;
-        int count = 0;
-        int count2 = 0;
-        try(BufferedReader br = new BufferedReader(new FileReader("test.txt"))) {
-            while ((s = br.readLine()) != null) {
-                System.out.println(s);
-                count++;
-            }
-        } catch (IOException exc){
-            System.out.println("Ошибка ввода/вывода: " + exc);
-        }
-        BufferedReader br1 =
-                new BufferedReader(
-                        new InputStreamReader(System.in));
-        try(FileWriter fw = new FileWriter("test.txt"))
-        {
-            while (count2 != count) {
-                count2++;
-                System.out.print(": ");
-                s1 = br1.readLine();
 
-                s1 = s1 + "\r\n";
-                fw.write(s1);
+        Scanner in = new Scanner(System.in);
+        int i;
+        System.out.print("Введите длину массива:   ");
+        i = in.nextInt();
+        int arr1[] = new int[i];
+        for (int x = 0; x < i; x++) {
+            System.out.print("Введите значение массива в ячейке:  ");
+            arr1[x] = in.nextInt();
+        }
+        for(int x = arr1.length-1 ; x > 0 ; x--){
+            for(int j = 0 ; j < x ; j++) {
+                if (arr1[j] > arr1[j + 1]) {
+                    int tmp = arr1[j];
+                    arr1[j] = arr1[j + 1];
+                    arr1[j + 1] = tmp;
+                }
             }
-        } catch (IOException exc){
-            System.out.println("Ошибка ввода/вывода: " + exc);
+        }
+        for (int x = 0; x < i; x++) {
+            System.out.print(arr1[x] + " ");
         }
     }
 }
