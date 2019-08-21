@@ -2,7 +2,7 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import java.text.DecimalFormat;
 class Main {
     public static void main(String[] args) {
 
@@ -10,10 +10,15 @@ class Main {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             double rub, change, c;
             System.out.print("Введите количество рублей:   ");
-            rub = Double.parseDouble(reader.readLine());
+            String rStr = reader.readLine();
+            rStr = rStr.replace(",", ".");
+            rub = Double.parseDouble(rStr);
             System.out.print("Введите курс конверсии:   ");
-            change = Double.parseDouble(reader.readLine());
-            System.out.print(rub / change);
+            String cStr = reader.readLine();
+            cStr = cStr.replace(",", ".");
+            change = Double.parseDouble(cStr);
+            DecimalFormat df = new DecimalFormat("#.##");
+            System.out.print(df.format(rub / change));
         } catch (IOException e) {
             e.printStackTrace();
         }
