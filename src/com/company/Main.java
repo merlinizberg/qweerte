@@ -1,14 +1,20 @@
 package com.company;
-import java.util.ArrayList;
+import java.util.*;
 
-class Main implements BoxInerface {
+
+public class Main implements BoxInerface {
 
     private ArrayList<Sweet> sweets = new ArrayList<>();
+
     public static void main(String[] args){
         Main box1 = new Main();
-        box1.addSweet(new Candy("Залупрошен", 14, 88, "Гей"));
+        box1.addSweet(new Candy("конфета", 14, 9, "Да"));
+        box1.addSweet(new Lolipop("леденец", 12, 15, 13));
+        box1.addSweet(new Jellybean("конфетки", 12, 15, "Желтый"));
+        box1.printBoxPrice();
         box1.printBoxWeight();
     }
+
     @Override
     public void addSweet(Sweet sweet) {
         sweets.add(sweet);
@@ -46,5 +52,8 @@ class Main implements BoxInerface {
     public void getAllBoxInformation() {
         printBoxWeight();
         printBoxPrice();
+    }
+    public void reduceWeight(double weight){
+
     }
 }

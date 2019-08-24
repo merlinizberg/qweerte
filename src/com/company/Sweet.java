@@ -1,5 +1,6 @@
 package com.company;
 
+
 public abstract class Sweet {
     private String name;
     private double weight;
@@ -12,6 +13,7 @@ public abstract class Sweet {
     public double getWeight() {
         return weight;
     }
+
     public double getPrice() {
         return price;
     }
