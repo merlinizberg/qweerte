@@ -6,13 +6,13 @@ public class Main {
     public static void main(String[] args) {
         try {
             Scanner in = new Scanner(System.in);
-            System.out.println("Введите название файла: ");
+            System.out.print("Введите название файла(с расширением) или адрес файла: ");
             String name = in.nextLine();
             Scanner scanner = new Scanner(new File(name));
             Map<String, Integer> statistics = new HashMap<>();
             Set<String> words = new TreeSet<>();
             while (scanner.hasNext()) {
-                String word = scanner.useDelimiter("\\s+").next();
+                String word = scanner.useDelimiter("\\s+|[-><'=+*(),;:{}\\\\{\\\\ .!/?\\\\&#№@]+").next();
                 words.add(word);
                 Integer count = statistics.get(word);
                 if (count == null) {
