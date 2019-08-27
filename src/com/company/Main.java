@@ -12,7 +12,7 @@ public class Main {
             Map<String, Integer> statistics = new HashMap<>();
             Set<String> words = new TreeSet<>();
             while (scanner.hasNext()) {
-                String word = scanner.useDelimiter("\\s+|[-><'=+*(),;:{}\\\\{\\\\ .!/?\\\\&#№@]+").next();
+                String word = scanner.useDelimiter("\\s+|[^a-zа-я]+").next();
                 words.add(word);
                 Integer count = statistics.get(word);
                 if (count == null) {
