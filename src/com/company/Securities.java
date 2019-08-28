@@ -1,7 +1,10 @@
 package com.company;
 import java.time.*;
+import java.util.Currency;
 
 public class Securities{
+    Сurrency currency = new Сurrency();
+    State state = new State();
     private int id;
     private String code;
     private String name_full;

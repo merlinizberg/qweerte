@@ -9,7 +9,7 @@ public class Jsonclass
         private String ogrn, code, address, name_full, name_short,inn, fio_head, phone, e_mail, www, id;
         Country country = new Country();
         Company_type company_type  = new Company_type();
-        Сurrency currency = new Сurrency();
+
         Securities securities = new Securities();
         private LocalDate egrul_date;
         private Boolean is_resident;

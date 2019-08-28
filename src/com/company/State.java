@@ -8,7 +8,7 @@ public class State {
     {
         return id;
     }
-    public String name()
+    public String name ()
     {
         return name;
     }
